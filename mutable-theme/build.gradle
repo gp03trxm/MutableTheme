@@ -32,3 +32,17 @@ dependencies {
     api 'com.jrummyapps:colorpicker:2.1.5'
     implementation ('com.github.ozodrukh:CircularReveal:2.0.1@aar')
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.gp03trxm'
+                artifactId = 'MutableTheme'
+                version = '1.0'
+            }
+        }
+    }
+}
